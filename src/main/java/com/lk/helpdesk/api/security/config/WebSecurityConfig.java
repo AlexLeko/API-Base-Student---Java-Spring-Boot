@@ -1,6 +1,7 @@
 package com.lk.helpdesk.api.security.config;
 
 import com.lk.helpdesk.api.security.jwt.JwtAuthenticationEntryPoint;
+import com.lk.helpdesk.api.security.jwt.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,6 +41,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
     @Bean
     public JwtAuthenticationTokenFilter authenticationTokenFilterBean() throws Exception {
         return new JwtAuthenticationTokenFilter();
+
     }
 
     @Override
