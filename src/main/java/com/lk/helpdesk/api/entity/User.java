@@ -1,12 +1,12 @@
 package com.lk.helpdesk.api.entity;
 
 import com.lk.helpdesk.api.enums.ProfileEnum;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Document
@@ -16,11 +16,11 @@ public class User {
     private String id;
 
     @Indexed(unique = true)
-    @NotEmpty(message = "Email Required")
+    @NotBlank(message = "Email Required")
     @Email(message = "E-mail Required")
     private String email;
 
-    @NotEmpty(message = "Password Required")
+    @NotBlank(message = "Password Required")
     @Size(min = 6)
     private String password;
 
